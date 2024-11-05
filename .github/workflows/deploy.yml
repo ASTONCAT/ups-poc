@@ -31,4 +31,4 @@ jobs:
         ftp-username: ${{ secrets.FTP_USERNAME }}
         ftp-password: ${{ secrets.FTP_PASSWORD }}
         local-dir: build
-        server-dir: /path/to/your/server/directory
+        server-dir: /var/www/upstechnology.cz/web
