@@ -28,7 +28,7 @@ const JobListPage: React.FC = () => {
     const fetchJobPositions = async () => {
       try {
         const response = await axios.get(
-          "https://ups-poc.test/wp-json/wp/v2/job-position"
+          "https://upstechnology.cz/cms/wp-json/wp/v2/jobs"
         );
         setJobPositions(response.data);
       } catch (error) {
@@ -63,7 +63,7 @@ const JobPositionDetails: React.FC = () => {
     const fetchJobPosition = async () => {
       try {
         const response = await axios.get(
-          `https://ups-poc.test/wp-json/wp/v2/job-position?slug=${slug}`
+          `https://upstechnology.cz/cms/wp-json/wp/v2/jobs?slug=${slug}`
         );
         setJobPosition(response.data[0]); // Assuming slug is unique
       } catch (error) {
