@@ -41,7 +41,7 @@ const JobListPage: React.FC = () => {
 
   return (
     <div>
-      <h1>Job Positions</h1>
+      <h1>Jobs</h1>
       <ul>
         {jobPositions.map((job) => (
           <li key={job.id}>
