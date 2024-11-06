@@ -34,5 +34,7 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
+        port: ${{ secrets.FTP_PORT }}
+        protocol: ${{ secrets.FTP_PROTOCOL }}
         local-dir: build/
         server-dir: /var/www/upstechnology.cz/web/poc/
