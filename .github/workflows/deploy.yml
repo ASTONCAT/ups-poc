@@ -26,7 +26,7 @@ jobs:
 
     - name: List server directory
       run: |
-        curl -u ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }}/ -Q "LIST /var/www/upstechnology.cz/web/"
+        curl -u ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }}/ -Q "LIST /var/www/upstechnology.cz/web/poc/"
 
     - name: Deploy via FTP
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
