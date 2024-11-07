@@ -1,6 +1,8 @@
 name: Deploy React App
 
 on:
+  repository_dispatch:
+    types: [wordpress_update]
   push:
     branches:
       - main
@@ -23,10 +25,6 @@ jobs:
 
     - name: Build React app
       run: npm run build
-
-    - name: List server directory
-      run: |
-        curl -u ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }}/ -Q "LIST /var/www/upstechnology.cz/web/poc/"
 
     - name: Deploy via FTP
       uses: SamKirkland/FTP-Deploy-Action@4.3.0

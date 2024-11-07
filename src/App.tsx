@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import axios from "axios";
 import {
   BrowserRouter,
@@ -41,7 +42,10 @@ const JobListPage: React.FC = () => {
 
   return (
     <div>
-      <h1>Good Jobs</h1>
+      <Helmet>
+        <title>Proof of concept</title>
+      </Helmet>
+      <h1>Job positions</h1>
       <ul>
         {jobPositions.map((job) => (
           <li key={job.id}>
@@ -82,6 +86,11 @@ const JobPositionDetails: React.FC = () => {
 
   return (
     <div>
+      {jobPosition && (
+        <Helmet>
+          <title>{jobPosition.title.rendered}</title>
+        </Helmet>
+      )}
       <h1>{jobPosition.title.rendered}</h1>
       <div dangerouslySetInnerHTML={{ __html: jobPosition.content.rendered }} />
       {/* ... display other details */}
@@ -91,7 +100,7 @@ const JobPositionDetails: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/poc">
       <Routes>
         <Route path="/" element={<JobListPage />} />
         <Route path="/job/:slug" element={<JobPositionDetails />} />
